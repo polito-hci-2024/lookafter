@@ -4,15 +4,14 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 export default function PreviewScreen({ route, navigation }) {
   const { imageUri } = route.params; // Receive image URI from CameraScreen
   // console.log("i am in PreviewScreen")
-  const __savePhoto = () => {
-    // Handle saving the photo
-    console.log("Photo saved");
-    navigation.goBack(); // Go back to the CameraScreen
+  const __retakePicture = () => {
+    // Go back to CameraScreen
+    navigation.goBack();
   };
 
-  const __retakePicture = () => {
-    // Go back to the CameraScreen to retake the picture
-    navigation.goBack();
+  const __chooseArtwork = () => {
+    // Navigate to ChooseArtworkScreen with the captured image URI
+    navigation.navigate('ChooseArtwork', { imageUri });
   };
 
   return (
@@ -21,10 +20,10 @@ export default function PreviewScreen({ route, navigation }) {
       <Image source={{ uri: imageUri }} style={styles.image} />
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={__retakePicture} style={styles.button}>
-          <Text style={styles.text}>No</Text>
+          <Text style={styles.text}>Re-Take</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={__savePhoto} style={styles.button}>
-          <Text style={styles.text}>Yes</Text>
+        <TouchableOpacity onPress={__chooseArtwork} style={styles.button}>
+          <Text style={styles.text}>Proceed</Text>
         </TouchableOpacity>
       </View>
     </View>

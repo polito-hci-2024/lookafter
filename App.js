@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import CameraScreen from './components/CameraScreen.js'; // Import the CameraScreen
 import PreviewScreen from './components/PreviewScreen.js'
 import Panoramica from './components/Panoramic.js';
-
+import ChooseArtworkScreen from './components/ArtworkScreen.js';
 const Stack = createStackNavigator();
 
 function MainPage({ navigation }) {
@@ -32,7 +32,8 @@ export default function App() {
         <Stack.Screen name="MainPage" component={MainPage} options={{ title: 'Main Page' }} />
         <Stack.Screen name="CameraScreen" component={CameraScreen} options={{ title: 'Camera' }} />
         <Stack.Screen name="Preview" component={PreviewScreen} />
-      </Stack.Navigator>
+        <Stack.Screen name="ChooseArtwork" component={ChooseArtworkScreen} />
+     </Stack.Navigator>
     </NavigationContainer>
   );
 }
