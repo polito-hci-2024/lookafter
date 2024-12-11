@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert, Image, ScrollView, Platform } from 'react-native';
 import { Camera, CameraView } from 'expo-camera';
 import { useNavigation } from '@react-navigation/native';
-import PreviewScreen from './PreviewScreen'
+
+
 export default function Panoramica() {
-    console.log("Accessing panoramica")
   const [startCamera, setStartCamera] = useState(false);
   const [capturedImages, setCapturedImages] = useState([]);
   const [isCapturingPanorama, setIsCapturingPanorama] = useState(false);
@@ -29,18 +29,27 @@ export default function Panoramica() {
     const images = [];
     for (let i = 0; i < 5; i++) { // Capture 5 images for the panorama
       try {
-        const photo = await cameraRef.current.takePictureAsync();
+        const photo = await cameraRef.current.takePictureAsync({skipProcessing: true});
         images.push(photo.uri);
         setCapturedImages([...images]);
         await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second between captures
       } catch (error) {
         console.error("Error capturing image:", error);
+        break;
       }
     }
 
     setIsCapturingPanorama(false);
-    Alert.alert('Panorama Complete', 'Panorama images captured.');
-    navigation.navigate('PanoramaPreview', { images });
+    
+    // if (images.length === 5) {
+    //   console.log("All images captured successfully:", images);
+    //   Alert.alert('Panorama Complete', 'Panorama images captured.');
+    // } else {
+    //   console.warn(`Expected 5 images, but captured only ${images.length}.`, images);
+    //   Alert.alert('Panorama Incomplete', `Captured ${images.length} out of 5 images.`);
+    // }
+    
+    navigation.navigate('Preview', { images });
   };
 
   if (!startCamera) {

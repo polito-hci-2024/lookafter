@@ -6,6 +6,9 @@ import CameraScreen from './components/CameraScreen.js'; // Import the CameraScr
 import PreviewScreen from './components/PreviewScreen.js'
 import Panoramica from './components/Panoramic.js';
 import ChooseArtworkScreen from './components/ArtworkScreen.js';
+import PathDetails from './components/Path.js';
+
+
 const Stack = createStackNavigator();
 
 function MainPage({ navigation }) {
@@ -33,6 +36,7 @@ export default function App() {
         <Stack.Screen name="CameraScreen" component={CameraScreen} options={{ title: 'Camera' }} />
         <Stack.Screen name="Preview" component={PreviewScreen} />
         <Stack.Screen name="ChooseArtwork" component={ChooseArtworkScreen} />
+        <Stack.Screen name="PathDetails" component={PathDetails} />
      </Stack.Navigator>
     </NavigationContainer>
   );

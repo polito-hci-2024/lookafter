@@ -46,7 +46,6 @@ export default function CameraScreen() {
       try {
         const photo = await cameraRef.current.takePictureAsync();
         console.log("Captured photo URI:", photo.uri);
-        // navigation.navigate('Preview', { imageUri: photo.uri });
         const mediaLibraryPermission = await MediaLibrary.requestPermissionsAsync();
         if(mediaLibraryPermission.status != 'granted'){
           Alert.alert(
@@ -55,11 +54,11 @@ export default function CameraScreen() {
           );
           return;
         }
-        await MediaLibrary.saveToLibraryAsync(photo.uri);
+        // await MediaLibrary.saveToLibraryAsync(photo.uri);
         setCapturedImage(photo); // Store captured image
         setPreviewVisible(true); // Navigate to Preview if picture is captured
         Alert.alert('Photo Saved', 'Photo saved to your device\'s gallery.');
-        navigation.navigate('Preview', { imageUri: photo.uri });
+        navigation.navigate('Preview', { images: photo.uri });
       } catch (error) {
         console.error("Error capturing photo:", error);
         Alert.alert("Error", "Failed to capture image. Please try again.");
