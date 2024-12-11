@@ -7,7 +7,13 @@ import PreviewScreen from './components/PreviewScreen.js'
 import Panoramica from './components/Panoramic.js';
 import ChooseArtworkScreen from './components/ArtworkScreen.js';
 import PathDetails from './components/Path.js';
-
+import ConfirmArtwork from './components/ArrivalConfirmation.js';
+import CameraConfirmation from './components/CameraConfirmation.js';
+import PreviewConfirmation from './components/PreviewConfirmation.js';
+import ArtworkReached from './components/ArtworkReached.js';
+import ArtworkInformations from './components/ArtworkInformations.js';
+import AnotherArtworkReached from './components/AnotherArtworkReached.js';
+import ArtworkInformationsBalloon from './components/ArtkorkInformationsBalloon.js';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +43,13 @@ export default function App() {
         <Stack.Screen name="Preview" component={PreviewScreen} />
         <Stack.Screen name="ChooseArtwork" component={ChooseArtworkScreen} />
         <Stack.Screen name="PathDetails" component={PathDetails} />
+        <Stack.Screen name="ConfirmArtwork" component={ConfirmArtwork} />
+        <Stack.Screen name="CameraConfirmation" component={CameraConfirmation} />
+        <Stack.Screen name="PreviewConfirmation" component={PreviewConfirmation} />
+        <Stack.Screen name="ArtworkReached" component={ArtworkReached} />
+        <Stack.Screen name="ArtworkInformations" component={ArtworkInformations} />
+        <Stack.Screen name="AnotherArtworkReached" component={AnotherArtworkReached} />
+        <Stack.Screen name="ArtworkInformationsBalloon" component={ArtworkInformationsBalloon} />
      </Stack.Navigator>
     </NavigationContainer>
   );
