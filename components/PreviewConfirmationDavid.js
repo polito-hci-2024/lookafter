@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 
-export default function PreviewConfirmation({ route, navigation }) {
+export default function PreviewConfirmationDavid({ route, navigation }) {
   const { images } = route.params || {}; // Receive images array from CameraScreen
 
   const __retakePicture = () => {
@@ -9,7 +9,7 @@ export default function PreviewConfirmation({ route, navigation }) {
   };
 
   const __chooseArtwork = () => {
-    navigation.navigate('ArtworkReached', { images }); 
+    navigation.navigate('ArtworkReachedDavid', { images }); 
     //navigation.navigate('AnotherArtworkReached', { images }); 
     //navigation.navigate('LostPage', { images });
   };

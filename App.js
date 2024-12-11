@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import CameraScreen from './components/CameraScreen.js'; // Import the CameraScreen
 import PreviewScreen from './components/PreviewScreen.js'
 import Panoramica from './components/Panoramic.js';
-import ChooseArtworkScreen from './components/ArtworkScreen.js';
+import ChooseArtworkScreen from './components/ArtworkScreenDavid.js';
 import PathDetails from './components/Path.js';
 import ConfirmArtwork from './components/ArrivalConfirmation.js';
 import CameraConfirmation from './components/CameraConfirmation.js';
@@ -15,6 +15,8 @@ import ArtworkInformations from './components/ArtworkInformations.js';
 import AnotherArtworkReached from './components/AnotherArtworkReached.js';
 import ArtworkInformationsBalloon from './components/ArtworkInformationsBalloon.js';
 import LostPage from './components/LostPage.js';
+import ChooseArtworkScreenMonalisa from './components/ArtworkScreenMonalisa.js';
+import PathDavid from './components/PathDavid.js';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +54,8 @@ export default function App() {
         <Stack.Screen name="AnotherArtworkReached" component={AnotherArtworkReached} />
         <Stack.Screen name="ArtworkInformationsBalloon" component={ArtworkInformationsBalloon} />
         <Stack.Screen name="LostPage" component={LostPage} />
+        <Stack.Screen name="ChooseArtworkMonalisa" component={ChooseArtworkScreenMonalisa} />
+        <Stack.Screen name="PathDavid" component={PathDavid} />
      </Stack.Navigator>
     </NavigationContainer>
   );

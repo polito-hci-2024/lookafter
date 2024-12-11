@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function ChooseArtworkScreen({ route, navigation }) {
-  const [currentIndex, setCurrentIndex] = useState(0); // State to track the current image index
 
   const handleNext = () => {
-    if (currentIndex < 2) {
-      setCurrentIndex(currentIndex + 1); // Go to the next image
-    }
+    navigation.navigate('ChooseArtworkMonalisa');
   };
 
   const handleChoose = () => {
-    console.log('Artwork chosen: The David'); // Placeholder for action
+    navigation.navigate('PathDavid');
   };
 
   return (
@@ -31,11 +28,11 @@ export default function ChooseArtworkScreen({ route, navigation }) {
       </TouchableOpacity>
 
       {/* Next Button Always Fixed on the Bottom Right */}
-      {currentIndex < 2 && (
+      
         <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
-      )}
+    
     </View>
   );
 }
