@@ -13,7 +13,7 @@ import PreviewConfirmation from './components/PreviewConfirmation.js';
 import ArtworkReached from './components/ArtworkReached.js';
 import ArtworkInformations from './components/ArtworkInformations.js';
 import AnotherArtworkReached from './components/AnotherArtworkReached.js';
-import ArtworkInformationsBalloon from './components/ArtkorkInformationsBalloon.js';
+import ArtworkInformationsBalloon from './components/ArtworkInformationsBalloon.js';
 import LostPage from './components/LostPage.js';
 
 const Stack = createStackNavigator();
