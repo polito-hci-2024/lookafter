@@ -14,6 +14,7 @@ import ArtworkReached from './components/ArtworkReached.js';
 import ArtworkInformations from './components/ArtworkInformations.js';
 import AnotherArtworkReached from './components/AnotherArtworkReached.js';
 import ArtworkInformationsBalloon from './components/ArtkorkInformationsBalloon.js';
+import LostPage from './components/LostPage.js';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="ArtworkInformations" component={ArtworkInformations} />
         <Stack.Screen name="AnotherArtworkReached" component={AnotherArtworkReached} />
         <Stack.Screen name="ArtworkInformationsBalloon" component={ArtworkInformationsBalloon} />
+        <Stack.Screen name="LostPage" component={LostPage} />
      </Stack.Navigator>
     </NavigationContainer>
   );

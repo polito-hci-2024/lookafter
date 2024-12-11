@@ -9,7 +9,8 @@ export default function PreviewConfirmation({ route, navigation }) {
   };
 
   const __chooseArtwork = () => {
-    navigation.navigate('AnotherArtworkReached', { images }); // Navigate to ChooseArtworkScreen
+    //navigation.navigate('AnotherArtworkReached', { images }); 
+    navigation.navigate('LostPage', { images });
   };
   const isMultipleImages = Array.isArray(images);
 
